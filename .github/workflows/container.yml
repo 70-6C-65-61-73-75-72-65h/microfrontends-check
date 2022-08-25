@@ -9,14 +9,14 @@ on:
 
 defaults:
   run:
-    working-directory: conatiner
+    working-directory: ./conatiner
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - run: |
           ls -a
       - run: npm ci
