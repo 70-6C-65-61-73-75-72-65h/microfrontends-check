@@ -63,7 +63,7 @@ const useStyles = makeStyles((theme) => ({
 
 const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-export default function Album() {
+export const Landing = () => {
   const classes = useStyles();
 
   return (
@@ -92,7 +92,7 @@ export default function Album() {
               short so folks don&apos;t simply skip over it entirely.
             </Typography>
             <div className={classes.heroButtons}>
-              <Grid container spacing={2} justify="center">
+              <Grid container spacing={2} justifyContent="center">
                 <Grid item>
                   <Link to="/pricing">
                     <Button variant="contained" color="primary">
@@ -163,4 +163,4 @@ export default function Album() {
       {/* End footer */}
     </React.Fragment>
   );
-}
+};
