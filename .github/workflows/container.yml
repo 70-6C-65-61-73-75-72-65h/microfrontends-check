@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: conatiner
+        working-directory: /conatiner
     steps:
       - uses: actions/checkout@v3
       - run: ls ${{github.workspace}}
