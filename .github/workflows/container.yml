@@ -7,18 +7,15 @@ on:
     paths:
       - "container/**"
 
-defaults:
-  run:
-    working-directory: ./conatiner
-
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    defaults:
+      run:
+        working-directory: conatiner
     steps:
       - uses: actions/checkout@v3
-      - run: |
-          ls -a
+      - run: ls ${{github.workspace}}
       - run: npm ci
       - run: npm run build
 
@@ -27,3 +24,10 @@ jobs:
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: |
+          ls -a
+      - run: ls ${{github.workspace}}
