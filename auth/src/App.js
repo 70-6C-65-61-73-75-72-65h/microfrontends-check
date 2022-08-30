@@ -18,8 +18,6 @@ export default ({ history, onSignIn }) => {
       <StylesProvider generateClassName={generateClassName}>
         <Router history={history}>
           <Switch>
-            {/* <Route path="/auth/signin" component={Signin} />
-            <Route path="/auth/signup" component={Signup} /> */}
             <Route path="/auth/signin">
               <Signin onSignIn={onSignIn} />
             </Route>
@@ -32,14 +30,3 @@ export default ({ history, onSignIn }) => {
     </div>
   );
 };
-
-// <Route
-// exact
-// path="/auth/signin"
-// render={(props) => <Signin onSignIn={onSignIn} />}
-// />
-// <Route
-// exact
-// path="/auth/signup"
-// render={(props) => <Signup onSignIn={onSignIn} />}
-// />
